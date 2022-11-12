@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ui.fragments.HomeFragment">
+
+  <androidx.core.widget.NestedScrollView
+    android:id="@+id/home_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:scrollbars="none"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp">
+
+      <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_youtube"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/title_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YouTube"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/images"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/profile"
+            app:layout_constraintEnd_toStartOf="@id/profile"
+            app:layout_constraintTop_toTopOf="@id/profile" />
+
+          <ImageView
+            android:id="@+id/notifications_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_notifications"
+            app:layout_constraintBottom_toBottomOf="@id/search_icon"
+            app:layout_constraintEnd_toStartOf="@id/search_icon"
+            app:layout_constraintTop_toTopOf="@id/search_icon" />
+
+          <ImageView
+            android:id="@+id/cast_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_cast"
+            app:layout_constraintBottom_toBottomOf="@id/notifications_icon"
+            app:layout_constraintEnd_toStartOf="@id/notifications_icon"
+            app:layout_constraintTop_toTopOf="@id/notifications_icon" />
+
+          <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+              <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent">
+
+                  <com.google.android.material.chip.Chip
+                    android:id="@+id/exploreChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Explore"
+                    android:textStyle="bold"
+                    app:chipCornerRadius="4dp"
+                    app:chipIcon="@drawable/ic_explore"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                  <View
+                    android:id="@+id/separator"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:background="#515050"
+                    app:layout_constraintBottom_toBottomOf="@id/exploreChip"
+                    app:layout_constraintStart_toEndOf="@id/exploreChip"
+                    app:layout_constraintTop_toTopOf="@id/exploreChip" />
+
+                  <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@id/exploreChip"
+                    app:layout_constraintStart_toEndOf="@id/separator"
+                    app:layout_constraintTop_toTopOf="@id/exploreChip">
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="All"
+                      android:textStyle="bold"
+                      app:chipBackgroundColor="#9A9898" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="New to you"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="@color/teal_200" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Computer Programming"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Cooking"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Comedy"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="DIY"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Fried Rice"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Recently Viewed"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Live"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+                    <com.google.android.material.chip.Chip
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="New to you"
+                      android:textStyle="bold"
+                      app:chipStrokeColor="#777676"
+                      app:chipStrokeWidth="0.2dp"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+
+                  </com.google.android.material.chip.ChipGroup>
+
+                  <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="SEND FEEDBACK"
+                    android:textColor="#2741D6"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/chip_group"
+                    app:layout_constraintStart_toEndOf="@id/chip_group"
+                    app:layout_constraintTop_toTopOf="@id/chip_group" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+              </HorizontalScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+          </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
