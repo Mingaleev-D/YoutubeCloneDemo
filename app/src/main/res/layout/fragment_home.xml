@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:scrollbars="none"
   tools:context=".ui.fragments.HomeFragment">
 
-  <androidx.core.widget.NestedScrollView
-    android:id="@+id/home_scroll_view"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:scrollbars="none"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ProgressBar
+      android:id="@+id/progressBar"
+      style="?android:attr/progressBarStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:progressBackgroundTint="@color/black"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.371" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/home_scrollview"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:padding="16dp">
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
       <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -36,7 +48,7 @@
 
           <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="90dp"
             android:background="@color/white"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
@@ -291,6 +303,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-  </androidx.core.widget.NestedScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/videosRecyclerview"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/home_scrollview"
+      tools:listitem="@layout/item_video" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
