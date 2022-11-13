@@ -1,7 +1,8 @@
-package com.example.youtubeclonedemo
+package com.example.youtubeclonedemo.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.youtubeclonedemo.R
 
 class MainActivity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {

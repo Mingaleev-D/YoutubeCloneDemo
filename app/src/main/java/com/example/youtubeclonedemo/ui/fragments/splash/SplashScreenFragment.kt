@@ -1,4 +1,4 @@
-package com.example.youtubeclonedemo.ui.fragments
+package com.example.youtubeclonedemo.ui.fragments.splash
 
 import android.os.Bundle
 import android.os.Handler
